@@ -1,0 +1,52 @@
+  
+  #include <PRIZM.h>      // include the PRIZM library
+
+  PRIZM prizm;            // instantiate a PRIZM object "prizm" so we can use its functions
+
+void setup() {
+
+   prizm.PrizmBegin();   // initialize the PRIZM controller
+prizm.setMotorInvert (2, 1);
+}
+
+void loop() {     // repeat this code in a loop
+ 
+forward (4000);
+ left (600);
+forward (2000);
+right (600);
+forward (500);
+Stop (100); 
+  prizm.setRedLED(1);
+  delay (100);
+  prizm.setGreenLED(1);
+  delay(100);
+  prizm.setServoPosition(1,180);
+  delay(1000);
+prizm.PrizmEnd();
+}
+
+void forward (int time){
+  prizm.setMotorSpeeds (360,360);
+  delay (time); 
+}
+
+void backward (int time){
+  prizm.setMotorSpeeds (-360,-360);
+  delay (time);
+}
+
+void left (int time){
+  prizm.setMotorSpeeds (-360,360);
+  delay(time);
+}
+
+void right (int time){
+  prizm.setMotorSpeeds (360,-360);
+  delay(time);
+}
+
+void Stop (int time){
+  prizm.setMotorSpeeds (0,0);
+  delay (time);
+}
