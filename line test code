@@ -1,0 +1,63 @@
+/*  PRIZM Controller example program
+ *  Blink the PRIZM red LED at a 1 second flash rate
+ *  author PWU on 08/05/2016
+*/
+  
+  #include <PRIZM.h>      // include the PRIZM library
+
+  PRIZM prizm;            // instantiate a PRIZM object "prizm" so we can use its functions
+
+void setup() {
+
+   prizm.PrizmBegin();   // initialize the PRIZM controller
+prizm.setMotorInvert (2, 1);
+Serial.begin(9600);
+}
+
+void loop() {     // repeat this code in a loop
+ 
+
+if (prizm.readLineSensor(2)==0){
+  leftWD 
+} else {
+  rightWD  
+}
+
+
+
+}
+
+void forward (int time){
+  prizm.setMotorSpeeds (360,360);
+  delay (time); 
+}
+
+void backward (int time){
+  prizm.setMotorSpeeds (-360,-360);
+  delay (time);
+}
+
+void left (int time){
+  prizm.setMotorSpeeds (-360,360);
+  delay(time);
+}
+
+void right (int time){
+  prizm.setMotorSpeeds (360,-360);
+  delay(time);
+}
+
+void Stop (int time){
+  prizm.setMotorSpeeds (0,0);
+  delay (time);
+}
+
+
+void rightWD(){
+  prizm.setMotorSpeeds (360,270);
+ 
+}
+void leftWD (){
+  prizm.setMotorSpeeds (270,360);
+ 
+}
