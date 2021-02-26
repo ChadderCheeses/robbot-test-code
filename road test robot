@@ -11,12 +11,12 @@ prizm.setMotorInvert (2, 1);
 
 void loop() {     // repeat this code in a loop
  
-forward (4000);
- left (600);
+forward (4000);                  // moves forward with delay 
+ left (600);                    // turns left with delay 
 forward (2000);
-right (600);
+right (600);                    // moves right with delay 
 forward (500);
-Stop (100); 
+Stop (100);                     //stops with delay 
   prizm.setRedLED(1);
   delay (100);
   prizm.setGreenLED(1);
