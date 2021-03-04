@@ -11,13 +11,13 @@ void setup() {
 void loop() {
 
   ps4.getPS4 ();
-  if (ps4.Connected){
+  if (ps4.Connected){      
     Drive();
     Pincher();
   }
 }
 
-void Pincher();
+void Pincher();         // open and close claw with button L1
    if(ps4.Button(L1)){
       prizm.setServoPosition(2,0);
   }
@@ -26,7 +26,7 @@ void Pincher();
   }
  }
 
- void Drive(){
+ void Drive(){          // drive robot forward with touch pad 
   int motorSpeed + ps4.Touchpad (TOUCHX);
   int mappedMaxSpeed = map(rawSpeed,0 ,1920 ,0 ,720);
   int joyStickL = ps4.Stick(LY);
